@@ -6,10 +6,14 @@ file_500 = open("file500.txt", 'w')
 counter = 0
 for line in file_data:
     counter += 1
-    if (counter - 2) % 4 == 0:
+    if (counter - 2) % 4 == 0 or (counter % 4 == 0):
         file_100.write(line[:100]+"\n")
         file_200.write(line[:200]+"\n")
         file_500.write(line[:500]+"\n")
+    else:
+        file_100.write(line)
+        file_200.write(line)
+        file_500.write(line)
 
 file_data.close()
 file_100.close()
