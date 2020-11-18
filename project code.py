@@ -5,6 +5,6 @@ with open("file.fastq", "r") as data, open("100q.fastq", "w") as file100q, open(
         sequencesq = ("@" + record.title + "\n" + record.seq[:count] + "\n" + "+" + "\n" + record.letter_annotations[:count] + "\n")
         sequencesa = ("@" + record.title + "\n" + record.seq[:count])
         while count is 100 or 200 or 300:
-            count += 100
             SeqIO.write(sequencesq, file100q, "fastq")
             SeqIO.write(sequencesa, file100a, "fasta")
+            count += 100
